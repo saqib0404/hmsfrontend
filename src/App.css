@@ -1,0 +1,23 @@
+.hotel-bg {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/hotel.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.form-box{
+    background: linear-gradient(rgba(255, 254, 254, 0.3), rgba(255, 255, 255, 0.3));
+}
+
+.inactive-nav {
+    color: rgb(192, 192, 192);
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.active-nav {
+    color: #98bbfe;
+    font-weight: 500;
+    margin-right: 1rem;
+}
