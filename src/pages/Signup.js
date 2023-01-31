@@ -6,7 +6,7 @@ const Signup = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmite = e => {
+    const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
@@ -35,7 +35,7 @@ const Signup = () => {
 
     return (
         <section className='hotel-bg grid place-items-center'>
-            <form onSubmit={handleSubmite} className='form-box px-10 py-10 rounded-lg w-10/12 md:w-6/12 lg:w-4/12'>
+            <form onSubmit={handleSubmit} className='form-box px-10 pt-10 pb-16 rounded-lg w-10/12 md:w-6/12 lg:w-4/12'>
                 <h2 className='text-3xl font-semibold text-white text-center '>Sign Up</h2>
 
                 <div className="form-control w-full mt-5">
