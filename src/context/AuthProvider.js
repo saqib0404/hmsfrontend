@@ -4,6 +4,7 @@ export const AUTH_CONTEXT = createContext();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch("http://localhost:5000/users/user-info", {
@@ -17,14 +18,19 @@ const AuthProvider = ({ children }) => {
             .then(data => {
                 console.log(data.data);
                 setUser(data.data)
+                setLoading(false)
             })
-            .catch(e => console.log(e))
+            .catch(e => {
+                console.log(e)
+                setLoading(false)
+            })
     }, [])
 
 
     const value = {
         user,
-        setUser
+        setUser,
+        loading
     }
     return (
         <AUTH_CONTEXT.Provider value={value}>

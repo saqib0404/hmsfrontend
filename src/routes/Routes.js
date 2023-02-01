@@ -2,6 +2,7 @@ import Main from "../layout/Main";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -12,7 +13,7 @@ const router = createBrowserRouter([{
     children: [
         {
             path: '/',
-            element: <Home />
+            element: <PrivateRoute><Home /></PrivateRoute>
         },
         {
             path: '/login',

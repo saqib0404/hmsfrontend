@@ -25,10 +25,10 @@ const Login = () => {
             .then(data => {
                 console.log(data)
                 if (data?.token) {
-                    toast.success("Logged in successfully")
                     window.localStorage.setItem("token", data.token);
                     window.location.reload();
-                    // navigate('/')
+                    toast.success("Logged in successfully")
+                    window.location.href="/"
                 }
                 else {
                     toast.error(data?.message)
