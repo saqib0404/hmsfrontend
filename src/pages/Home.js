@@ -3,6 +3,7 @@ import { AUTH_CONTEXT } from '../context/AuthProvider';
 import { FaUserAlt } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { toast } from 'react-hot-toast';
+import VerifyModal from './Shared/Modals/VerifyModal';
 
 const Home = () => {
     const { user } = useContext(AUTH_CONTEXT);
@@ -61,9 +62,18 @@ const Home = () => {
     return (
         <section className='mx-2 md:mx-16'>
             <form onSubmit={handleUpdate} className='grid grid-cols-12 pt-16'>
-                <div className='col-span-1 border-r-2'>
-                    <FaUserAlt size={60} />
-                    <button className='bg-indigo-500 text-white font-semibold px-4 py-1 text-sm rounded-sm mt-3'>Verify</button>
+                <div className='col-span-2 border-r-2'>
+                    <FaUserAlt className='mb-5 mx-auto' size={60} />
+                    <div className='mb-5 mx-auto w-5/12'>
+                        {
+                            user?.pendingStatus === null &&
+                            <label htmlFor="verify-modal" className="bg-indigo-500 text-white font-semibold px-4 py-1 text-sm rounded-sm cursor-pointer">Verify</label>
+                        }
+                        {
+                            user?.pendingStatus === true &&
+                            <button disabled className="bg-indigo-300 text-white font-semibold px-4 py-1 text-sm rounded-sm">pending</button>
+                        }
+                    </div>
                 </div>
 
                 <div className='col-span-4 ml-4'>
@@ -149,9 +159,12 @@ const Home = () => {
 
                 </div>
             </form>
-            <div className='flex justify-center'>
+            <div className='flex justify-center mt-4'>
                 <button className='bg-indigo-500 text-white font-semibold px-6 py-2 rounded-md '>Add Hotel</button>
             </div>
+
+            {/* Modal */}
+            <VerifyModal />
         </section >
     );
 };
