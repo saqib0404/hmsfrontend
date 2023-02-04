@@ -36,7 +36,7 @@ const Navbar = () => {
                                 isMainAdmin &&
                                 <>
                                     <li><Link to='/all-users' className='bg-indigo-400 text-white px-4 py-1 mb-2 rounded-lg hover:bg-indigo-500'><FaUsers />All Users</Link></li>
-                                    <li><Link to='/all-users' className='bg-indigo-400 text-white px-4 py-1 mb-2 rounded-lg hover:bg-indigo-500'><MdVerified />Verify requests</Link></li>
+                                    <li><Link to='/verfy-requests' className='bg-indigo-400 text-white px-4 py-1 mb-2 rounded-lg hover:bg-indigo-500'><MdVerified />Verify requests</Link></li>
                                     <li><Link to='/all-users' className='bg-indigo-400 text-white px-4 py-1 mb-2 rounded-lg hover:bg-indigo-500'><FaHotel />Hotel requests</Link></li>
                                 </>
                             }

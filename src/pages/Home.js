@@ -12,7 +12,7 @@ const Home = () => {
 
     const handleUpdate = e => {
         e.preventDefault();
-        if(!user?.isActive) return toast.error("Account is disabled")
+        if (!user?.isActive) return toast.error("Account is disabled")
         const form = e.target;
         const name = form.name.value;
         const birthday = form.birthday.value;
@@ -62,6 +62,7 @@ const Home = () => {
 
     return (
         <section className='mx-2 md:mx-16'>
+            {!user?.isActive && <h2 className='text-center pt-4 text-red-600 font-semibold'> Acount Disabled</h2>}
             <form onSubmit={handleUpdate} className='grid grid-cols-12 pt-16'>
                 <div className='col-span-2 border-r-2'>
                     <FaUserAlt className='mb-5 mx-auto' size={60} />

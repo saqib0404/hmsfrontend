@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ConfirmModal = ({ title, handleDisable, disableData }) => {
+const ConfirmModal = ({ title, disable, data }) => {
     return (
         <div>
             {/* Put this part before </body> tag */}
@@ -10,7 +10,7 @@ const ConfirmModal = ({ title, handleDisable, disableData }) => {
                     <label htmlFor="Confirm-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg font-bold">{title}</h3>
                     <div className='flex justify-center mt-8'>
-                        <label onClick={() => handleDisable(disableData)} htmlFor="Confirm-modal" className="btn btn-sm btn-error mr-3">Yes</label>
+                        <label onClick={() => disable(data)} htmlFor="Confirm-modal" className="btn btn-sm btn-error mr-3">Yes</label>
                         <label htmlFor="Confirm-modal" className="btn btn-sm">No</label>
                     </div>
                 </div>
