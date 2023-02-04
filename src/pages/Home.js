@@ -8,10 +8,11 @@ import VerifyModal from './Shared/Modals/VerifyModal';
 const Home = () => {
     const { user } = useContext(AUTH_CONTEXT);
     const [editable, setEditable] = useState(false);
-    console.log(user);
+    // console.log(user);
 
     const handleUpdate = e => {
         e.preventDefault();
+        if(!user?.isActive) return toast.error("Account is disabled")
         const form = e.target;
         const name = form.name.value;
         const birthday = form.birthday.value;

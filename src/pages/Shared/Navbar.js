@@ -11,7 +11,7 @@ const Navbar = () => {
     const { user, setUser } = useContext(AUTH_CONTEXT);
     const navigate = useNavigate();
     const [isMainAdmin] = useMainAdmin(user?.email)
-    console.log(isMainAdmin);
+    
     const handleLogout = () => {
         window.localStorage.clear();
         setUser(null);
