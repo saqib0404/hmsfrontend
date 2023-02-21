@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AUTH_CONTEXT } from '../../context/AuthProvider';
 import ConfirmModal from '../Shared/Modals/ConfirmModal';
 
@@ -65,7 +66,7 @@ const AllUsers = () => {
                             data?.map((item, idx) => <tr key={idx} className={`${user?.email === item?.email && "hidden"}`}>
                                 <th>{idx + 1}</th>
                                 <td>{item?.email}</td>
-                                <td><button className='btn btn-xs btn-success'>Details</button></td>
+                                <td><Link to={`/all-users/${item?.email}`} className='btn btn-xs btn-success'>Details</Link></td>
                                 <td>
                                     {item?.isActive ?
                                         <label htmlFor="Confirm-modal" onClick={() => setDisableData(item?.email)} className='btn btn-xs btn-error'>Disable</label>
